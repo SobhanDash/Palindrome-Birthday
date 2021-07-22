@@ -117,3 +117,5 @@ checkBtn.addEventListener("click", () => {
   }
   checkPalindrome(date.value);
 });
+
+
