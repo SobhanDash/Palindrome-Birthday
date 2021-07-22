@@ -8,11 +8,11 @@ let maxDate = dateToString(today);
 date.setAttribute("max", maxDate);
 date.setAttribute("value", maxDate);
 
-// Convert Date to String
+//Convert Date to String
 function dateToString(date) {
-  let dd = today.getDate();
+  let dd = date.getDate();
   //js month start from 0
-  let mm = today.getMonth() + 1;
+  let mm = date.getMonth() + 1;
 
   if (dd < 10) {
     dd = "0" + dd;
@@ -28,9 +28,8 @@ const findNextDate = (dateArr) => {
   let currDate = new Date(dateArr.join("-"));
   //+1 for checking the next month
   currDate.setDate(currDate.getDate() + 1);
-  console.log(dateToString(currDate));
+  // console.log(dateToString(currDate));
   let nextDateFormat = "";
-  // let palinDate = 0;
   let dayCount = 0;
   while (!nextDateFormat) {
     currDate.setDate(currDate.getDate() + 1);
@@ -101,7 +100,7 @@ function checkPalindrome(date) {
   let dateList = date.split("-");
   //check if date is palindrome in 4 formats
   let [format, palindromeDate] = isPalindrome(dateList);
-  console.log(format);
+  // console.log(format);
   if (format) {
     output.innerText = `Congratulations🎉🥳!\n Your birthday forms a palindrome string in the ${format} format as ${palindromeDate}.`;
   } else {
@@ -117,6 +116,3 @@ checkBtn.addEventListener("click", () => {
   }
   checkPalindrome(date.value);
 });
-
-
-//test
