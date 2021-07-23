@@ -1,6 +1,8 @@
 const date = document.querySelector("#birthday");
 const output = document.querySelector("#outputMsg");
 const checkBtn = document.querySelector(".check");
+const loading = document.querySelector(".loading");
+loading.style.display = "none"
 
 //Setting max date to today, if entered without data will trigger
 let today = new Date();
@@ -111,8 +113,14 @@ function checkPalindrome(date) {
 
 //Button trigger to check
 checkBtn.addEventListener("click", () => {
+  output.style.display = "none"
+  loading.style.display = "block"
   if (!date.value) {
     output.innerText = "Enter a valid date";
   }
   checkPalindrome(date.value);
+  setTimeout(()=>{
+    loading.style.display = "none"
+    output.style.display = "block";
+  }, 3000)
 });
